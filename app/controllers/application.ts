@@ -1,0 +1,20 @@
+import Controller from '@ember/controller';
+
+export default class Application extends Controller.extend({
+  // anything which *must* be merged to prototype here
+}) {
+  // normal class body definition here
+
+  model: any;
+
+  get modelName() {
+    return this.model.name;
+  }
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your controllers.
+declare module '@ember/controller' {
+  interface Registry {
+    'application': Application;
+  }
+}
